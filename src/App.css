@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -437,5 +441,19 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  @keyframes float-wave {
+    0%   { transform: translateY(0) rotate(-2deg) scale(1); }
+    25%  { transform: translateY(-10px) rotate(2deg) scale(1.03); }
+    50%  { transform: translateY(0) rotate(-2deg) scale(1); }
+    75%  { transform: translateY(10px) rotate(-4deg) scale(0.98); }
+    100% { transform: translateY(0) rotate(-2deg) scale(1); }
+  }
+
+  .animate-float-wave {
+    animation: float-wave 4s ease-in-out infinite;
   }
 }
