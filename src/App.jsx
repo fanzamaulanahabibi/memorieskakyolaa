@@ -23,6 +23,14 @@ function App() {
     { id: 8, image: "/liv 8.jpg" },
     { id: 9, image: "/liv 9.jpg" },
     { id: 10, image: "/liv 10.jpg" },
+    { id: 11, image: "/liv 11.jpg" },
+    { id: 12, image: "/liv 12.jpg" },
+    { id: 13, image: "/liv 13.jpg" },
+    { id: 14, image: "/liv 14.jpg" },
+    { id: 15, image: "/liv 15.jpg" },
+    { id: 16, image: "/liv 16.jpg" },
+    { id: 17, image: "/liv 17.jpg" },
+    { id: 18, image: "/liv 18.jpg" }
   ]
 
   const songs = {
