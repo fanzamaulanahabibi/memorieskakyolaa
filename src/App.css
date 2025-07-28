@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* max-width: 1280px; ← HAPUS atau komentar */
+  /* margin: 0 auto; ← HAPUS */
+  padding: 0;
   text-align: center;
 }
+
 
 .logo {
   height: 6em;
@@ -457,3 +458,23 @@
     animation: float-wave 4s ease-in-out infinite;
   }
 }
+/* Shooting Star (Galaksi Cinta) */
+.shooting-star {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(45deg, white, rgba(255,255,255,0));
+  transform: rotate(45deg);
+  animation: fall 1.5s linear forwards;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+@keyframes fall {
+  to {
+    transform: translate(200px, 600px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
