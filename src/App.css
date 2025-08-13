@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 #root {
-  /* max-width: 1280px; ← HAPUS atau komentar */
-  /* margin: 0 auto; ← HAPUS */
   padding: 0;
   text-align: center;
 }
 
-
+/* ================== */
+/*   ANIMASI LAMA     */
+/* ================== */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -24,427 +24,40 @@
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+.card { padding: 2em; }
+.read-the-docs { color: #888; }
 
-.card {
-  padding: 2em;
-}
+/* Efek Album Kenangan Lama */
+@keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg);} 50% { transform: translateY(-20px) rotate(180deg);} }
+@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);} 50% { box-shadow: 0 0 40px rgba(147, 51, 234, 0.6);} }
+@keyframes fade-in { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: translateY(0);} }
+@keyframes slide-in-left { from { opacity: 0; transform: translateX(-100px);} to { opacity: 1; transform: translateX(0);} }
+@keyframes slide-in-right { from { opacity: 0; transform: translateX(100px);} to { opacity: 1; transform: translateX(0);} }
+@keyframes scale-in { from { opacity: 0; transform: scale(0.8);} to { opacity: 1; transform: scale(1);} }
+@keyframes bounce-in { 0% { opacity: 0; transform: scale(0.3);} 50% { opacity: 1; transform: scale(1.05);} 70% { transform: scale(0.9);} 100% { opacity: 1; transform: scale(1);} }
+@keyframes shimmer { 0% { background-position: -200px 0;} 100% { background-position: calc(200px + 100%) 0;} }
+@keyframes rotate-3d { from { transform: perspective(1000px) rotateY(0deg);} to { transform: perspective(1000px) rotateY(360deg);} }
+@keyframes wave { 0%, 100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
+@keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0) rotate(0deg);} 50% { opacity: 1; transform: scale(1) rotate(180deg);} }
 
-.read-the-docs {
-  color: #888;
-}
+/* Utility Classes Lama */
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-fade-in { animation: fade-in 1s ease-out; }
+.animate-slide-in-left { animation: slide-in-left 0.8s ease-out; }
+.animate-slide-in-right { animation: slide-in-right 0.8s ease-out; }
+.animate-scale-in { animation: scale-in 0.6s ease-out; }
+.animate-bounce-in { animation: bounce-in 0.8s ease-out; }
+.animate-shimmer { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); background-size: 200px 100%; animation: shimmer 2s infinite; }
+.animate-rotate-3d { animation: rotate-3d 8s linear infinite; }
+.animate-wave { animation: wave 2s ease-in-out infinite; }
+.animate-sparkle { animation: sparkle 1.5s ease-in-out infinite; }
 
-/* Custom Animations untuk Album Kenangan */
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes bounce-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
-}
-
-@keyframes rotate-3d {
-  from {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-  to {
-    transform: perspective(1000px) rotateY(360deg);
-  }
-}
-
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes sparkle {
-  0%, 100% {
-    opacity: 0;
-    transform: scale(0) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) rotate(180deg);
-  }
-}
-
-/* Utility Classes */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.animate-fade-in {
-  animation: fade-in 1s ease-out;
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.6s ease-out;
-}
-
-.animate-bounce-in {
-  animation: bounce-in 0.8s ease-out;
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  background-size: 200px 100%;
-  animation: shimmer 2s infinite;
-}
-
-.animate-rotate-3d {
-  animation: rotate-3d 8s linear infinite;
-}
-
-.animate-wave {
-  animation: wave 2s ease-in-out infinite;
-}
-
-.animate-sparkle {
-  animation: sparkle 1.5s ease-in-out infinite;
-}
-
-/* Hover Effects */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.hover-glow {
-  transition: box-shadow 0.3s ease;
-}
-
-.hover-glow:hover {
-  box-shadow: 0 0 30px rgba(147, 51, 234, 0.4);
-}
-
-.hover-scale {
-  transition: transform 0.3s ease;
-}
-
-.hover-scale:hover {
-  transform: scale(1.05);
-}
-
-/* Glassmorphism Effects */
-.glass {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.glass-dark {
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #764ba2, #667eea);
-}
-
-/* Loading Animation */
-.loading-dots {
-  display: inline-block;
-}
-
-.loading-dots::after {
-  content: '';
-  animation: dots 1.5s steps(5, end) infinite;
-}
-
-@keyframes dots {
-  0%, 20% {
-    content: '';
-  }
-  40% {
-    content: '.';
-  }
-  60% {
-    content: '..';
-  }
-  80%, 100% {
-    content: '...';
-  }
-}
-
-/* Parallax Effect */
-.parallax {
-  transform-style: preserve-3d;
-  transform: translateZ(0);
-}
-
-/* Magnetic Effect */
-.magnetic {
-  transition: transform 0.3s ease;
-}
-
-.magnetic:hover {
-  transform: translateY(-5px);
-}
-
-/* Neon Glow */
-.neon-glow {
-  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
-}
-
-/* Floating Animation */
-.floating {
-  animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Heartbeat Animation */
-.heartbeat {
-  animation: heartbeat 1.5s ease-in-out infinite;
-}
-
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-/* Rainbow Text */
-.rainbow-text {
-  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rainbow 3s ease-in-out infinite;
-}
-
-@keyframes rainbow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Typewriter Effect */
-.typewriter {
-  overflow: hidden;
-  border-right: 2px solid;
-  white-space: nowrap;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: currentColor;
-  }
-}
-
-/* Confetti Animation */
-.confetti {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: #f00;
-  animation: confetti-fall 3s linear infinite;
-}
-
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(-100vh) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .animate-float {
-    animation-duration: 4s;
-  }
-  
-  .glass {
-    backdrop-filter: blur(5px);
-  }
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .glass {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
+/* Float Wave (penting untuk foto) */
 @layer utilities {
   @keyframes float-wave {
     0%   { transform: translateY(0) rotate(-2deg) scale(1); }
@@ -453,28 +66,53 @@
     75%  { transform: translateY(10px) rotate(-4deg) scale(0.98); }
     100% { transform: translateY(0) rotate(-2deg) scale(1); }
   }
-
   .animate-float-wave {
     animation: float-wave 4s ease-in-out infinite;
   }
 }
-/* Shooting Star (Galaksi Cinta) */
+
+/* Hover Effects Lama */
+.hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.hover-lift:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.hover-glow { transition: box-shadow 0.3s ease; }
+.hover-glow:hover { box-shadow: 0 0 30px rgba(147, 51, 234, 0.4); }
+.hover-scale { transition: transform 0.3s ease; }
+.hover-scale:hover { transform: scale(1.05); }
+
+/* ================== */
+/*  TAMBAHAN ROMANTIS */
+/* ================== */
+@keyframes petal-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+@keyframes petal-sway {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(20px); }
+}
+.animate-petal {
+  animation: petal-fall 6s linear infinite, petal-sway 3s ease-in-out infinite;
+}
+
+@keyframes romantic-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 182, 193, 0.6); }
+}
+.animate-romantic-glow {
+  animation: romantic-glow 2s ease-in-out infinite;
+}
+
 .shooting-star {
   position: absolute;
   top: 0;
   width: 2px;
   height: 80px;
-  background: linear-gradient(45deg, white, rgba(255,255,255,0));
+  background: linear-gradient(45deg, #ffd6d6, rgba(255,255,255,0));
   transform: rotate(45deg);
   animation: fall 1.5s linear forwards;
   opacity: 0.8;
   z-index: 10;
 }
-
 @keyframes fall {
-  to {
-    transform: translate(200px, 600px) rotate(45deg);
-    opacity: 0;
-  }
+  to { transform: translate(200px, 600px) rotate(45deg); opacity: 0; }
 }
-
